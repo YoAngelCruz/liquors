@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'licores.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'licores_local',
+        'NAME': 'licores_develop',
         'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': 'localhost',
