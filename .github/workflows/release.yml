@@ -29,4 +29,4 @@ jobs:
     - name: show python version
       run: python --version
     - name: install dependencies
-      run: pip install -r requirements.txt
+      run: pip install -r licores/requirements.txt
