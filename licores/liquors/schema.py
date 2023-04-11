@@ -64,3 +64,5 @@ class CreateLiquor(graphene.Mutation):
 #4
 class Mutation(graphene.ObjectType):
     create_liquor = CreateLiquor.Field()
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
