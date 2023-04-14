@@ -20,9 +20,9 @@ class CreateLiquor(graphene.Mutation):
     destilado = graphene.String() 
     nombre = graphene.String() 
     description = graphene.String()
-    pais_origen= graphene.String()
+    paisOrigen= graphene.String()
     size = graphene.String()
-    tipo_envase = graphene.String()
+    tipoEnvase = graphene.String()
     edicion = graphene.String ()
     precio = graphene.Float()
 
@@ -31,19 +31,19 @@ class CreateLiquor(graphene.Mutation):
         destilado = graphene.String() 
         nombre = graphene.String() 
         description = graphene.String()
-        pais_origen= graphene.String()
+        paisOrigen= graphene.String()
         size = graphene.String()
-        tipo_envase = graphene.String()
+        tipoEnvase = graphene.String()
         edicion = graphene.String ()
         precio = graphene.Float()
     #3
-    def mutate(self, info, destilado, nombre, description, pais_origen, size, tipo_envase, edicion, precio):
+    def mutate(self, info, destilado, nombre, description, paisOrigen, size, tipoEnvase, edicion, precio):
         liquor = Liquor(destilado=destilado, 
                         nombre=nombre, 
                         description=description, 
-                        pais_origen=pais_origen, 
+                        paisOrigen=paisOrigen, 
                         size=size, 
-                        tipo_envase=tipo_envase, 
+                        tipoEnvase=tipoEnvase, 
                         edicion=edicion, 
                         precio=precio)
         liquor.save() #Insert into liquor (...) Values (...)
@@ -53,9 +53,9 @@ class CreateLiquor(graphene.Mutation):
             destilado=liquor.destilado,
             nombre=liquor.nombre,
             description=liquor.description,
-            pais_origen=liquor.pais_origen,
+            paisOrigen=liquor.paisOrigen,
             size=liquor.size,
-            tipo_envase=liquor.tipo_envase,
+            tipoEnvase=liquor.tipoEnvase,
             edicion=liquor.edicion,
             precio=liquor.precio
         )
@@ -64,3 +64,5 @@ class CreateLiquor(graphene.Mutation):
 #4
 class Mutation(graphene.ObjectType):
     create_liquor = CreateLiquor.Field()
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
