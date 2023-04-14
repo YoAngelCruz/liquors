@@ -5,6 +5,7 @@ import json
 
 # Create your tests here.
 
+
 from liquors.schema import schema
 from liquors.models import Liquor
 
