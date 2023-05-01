@@ -4,9 +4,9 @@ build:
 
 deploy:
  - okteto build # build the image with the latest code
- - kubectl apply -f licores/manifests # create all the resources in kubernetes
+ - kubectl apply -f manifests # create all the resources in kubernetes
 dev:
  yoangelcruz:
    command: bash
    sync:
-   - .:/licores   # cambiar por su proyecto
+   - .:/licores/licores   # cambiar por su proyecto
