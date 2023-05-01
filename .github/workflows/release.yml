@@ -45,11 +45,11 @@ jobs:
       run: cat .env
     - name: run tests
       run: python licores/manage.py test --settings=settings.local -v 3 --keepdb
-    - uses: okteto/context@2.7.0
+    - uses: licores/okteto/context@2.7.0
       with:
        token: ${{ secrets.OKTETO_TOKEN }}
     - name: Deploy
-      uses: okteto/pipeline@2.7.0
+      uses: licores/okteto/pipeline@2.7.0
       with:
           name: yoangelcruz # cambiar por su namespace
           timeout: 5m
