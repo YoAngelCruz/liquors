@@ -49,7 +49,7 @@ jobs:
       with:
        token: ${{ secrets.OKTETO_TOKEN }}
     - name: Deploy
-      uses: licores/okteto/pipeline@2.7.0
+      uses: okteto/pipeline@2.7.0
       with:
           name: yoangelcruz # cambiar por su namespace
           timeout: 5m
